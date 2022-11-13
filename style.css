@@ -36,6 +36,10 @@ li {
   display: flex;
 }
 
+.container {
+  padding: 50px 0;
+}
+
 .row {
   width: 100%;
   max-width: 800px;
@@ -48,6 +52,14 @@ li {
 
 .text--purple {
   color: #6030b1;
+}
+
+section:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.section__title {
+  margin-bottom: 20px;
 }
 
 /* --------  Navigation Bar ---------- */
@@ -152,4 +164,51 @@ nav {
 
 .about-me__img {
   width: 100%;
+}
+
+/* ------------  tech stack ---------- */
+.language__img {
+  width: 100%;
+  max-width: 100px;
+  transition: all 300ms ease;
+}
+
+.language:hover .language__img {
+  filter: brightness(80%);
+  opacity: 0.86;
+  transform: scale(0.9);
+}
+
+.language {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.language__img--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 16px;
+}
+
+.language__list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.language__name {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 300ms ease;
+  font-size: 20px;
+  opacity: 0;
+}
+
+.language:hover .language__name {
+  transform: scale(1);
+  opacity: 1;
 }
