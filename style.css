@@ -7,6 +7,10 @@
   display: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -44,6 +48,7 @@ li {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 12px;
 }
 
 .flex-1 {
@@ -62,6 +67,32 @@ section:nth-child(even) {
   margin-bottom: 20px;
 }
 
+a {
+  position: relative;
+}
+
+.link__hover-effect:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: -3px;
+  right: 0;
+  transition: all 300ms ease;
+}
+
+.link__hover-effect--white:after {
+  background-color: white;
+}
+.link__hover-effect--black:after {
+  background-color: black;
+}
+
+.link__hover-effect:hover:after {
+  width: 100%;
+  left: 0;
+}
+
 /* --------  Navigation Bar ---------- */
 nav {
   height: 100px;
@@ -71,6 +102,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 12px;
 }
 
 .nav__link--list {
@@ -196,6 +228,7 @@ nav {
 .language__list {
   display: flex;
   width: 100%;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -297,4 +330,80 @@ nav {
 .project__description--link {
   text-align: left;
   color: #fff;
+}
+
+/* ------- footer -------*/
+footer {
+  background-color: #242424;
+}
+
+.footer__social--list {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8% 0;
+}
+
+.footer__logo--image {
+  width: 70px;
+  height: 70px;
+}
+
+.footer__social--link,
+.footer__copyright {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__anchor {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.footer__anchor:hover .footer__logo--popper {
+  transform: translateX(60px);
+  opacity: 1;
+}
+
+.footer__logo--popper {
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  font-weight: 700;
+  opacity: 0;
+  transition: all 300ms ease;
+}
+
+/* ------- Small Phones, Tablets, Large smartphones ------- */
+@media (max-width: 768px) {
+  nav {
+    height: 68px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .about-me__info--paragraph {
+    font-size: 18px;
+  }
+  .language {
+    width: calc(100% / 3);
+  }
+  .project__description--para {
+    font-size: 14px;
+  }
+
+  .project__description {
+    padding-right: 30px;
+    left: 30px;
+  }
 }
